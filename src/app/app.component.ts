@@ -23,12 +23,12 @@ export class AppComponent implements OnInit {
         Validators.email,
         Validators.maxLength(50),
       ]),
-      country: new FormControl(null),
-      gender: new FormControl(null),
+      country: new FormControl(null, Validators.required),
+      gender: new FormControl(null, Validators.required),
+      marriedStatus: new FormControl(false, Validators.requiredTrue),
     });
   }
   onSubmit() {
     console.log(this.dataForm);
-    console.log(this.dataForm.controls['fname'].valid);
   }
 }
