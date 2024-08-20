@@ -1,3 +1,45 @@
+form {
+  font-size: 62.5%;
+}
+.border {
+  padding: 20px;
+
+  border: 1px solid #888;
+  margin-top: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+
+  background-image: linear-gradient(to right, #222, #bbb);
+}
 input.ng-invalid.ng-touched {
-  border: 1px solid red;
+  border: 1.4px solid #0cc5d2;
+}
+label {
+  font-size: 15px;
+  color: #fff;
+}
+input,
+select {
+  border-radius: 10px;
+  border: 1.5px solid #aaa;
+  transition: all 0.4s;
+}
+input:hover,
+select:hover {
+  cursor: pointer;
+  border: 1.5px solid #222;
+  box-shadow: 0 5px 16px 5px #ffffff0d;
+}
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  transform: scale(1.01);
+}
+
+.heading {
+  background-image: linear-gradient(to left, #0cc5d2, #bffbff);
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
 }

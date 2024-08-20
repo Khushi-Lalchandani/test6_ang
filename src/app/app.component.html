@@ -1,18 +1,41 @@
 <div class="container">
-  <div class="row">
+  <div class="col-xs-12 col-lg-8 border">
+    <h2 class="heading">Registration form</h2>
     <form [formGroup]="dataForm" (submit)="onSubmit()">
       <div class="form-group">
         <label>First Name</label>
         <input type="text" class="form-control" formControlName="fname" />
+      </div>
+      <div
+        class="help-block"
+        style="font-size: 14px; color: #eef"
+        *ngIf="!dataForm.get('fname')?.valid && dataForm.get('fname')?.touched"
+      >
+        Enter a proper value!
       </div>
 
       <div class="form-group">
         <label>Last Name</label>
         <input type="text" class="form-control" formControlName="lname" />
       </div>
+      <div
+        class="help-block"
+        style="font-size: 14px; color: #eef"
+        *ngIf="!dataForm.get('lname')?.valid && dataForm.get('lname')?.touched"
+      >
+        Enter a proper value!
+      </div>
+
       <div class="form-group">
         <label>Email</label>
         <input type="text" class="form-control" formControlName="email" />
+      </div>
+      <div
+        class="help-block"
+        style="font-size: 14px; color: #eef"
+        *ngIf="!dataForm.get('email')?.valid && dataForm.get('email')?.touched"
+      >
+        Enter a proper value!
       </div>
       <div class="form-group">
         <label>Country</label>
@@ -37,20 +60,42 @@
           <option value="Nepal">Nepal</option>
         </select>
       </div>
+      <div
+        class="help-block"
+        style="font-size: 14px; color: #eef"
+        *ngIf="
+          !dataForm.get('country')?.valid && dataForm.get('country')?.touched
+        "
+      >
+        Enter a proper value!
+      </div>
       <div class="form-group" *ngFor="let gender of genders">
         <label>
-          <input type="radio" formControlName="gender" [value]="gender" />
+          <input
+            style="cursor: pointer"
+            type="radio"
+            formControlName="gender"
+            [value]="gender"
+          />
           {{ gender }}</label
         >
       </div>
       <div class="form-group">
-        <label>Married</label>
-        <input type="checkbox" formControlName="marriedStatus" />
+        <label>Married: </label>
+        <input
+          type="checkbox"
+          style="height: 11px; width: 11px; margin-left: 8px"
+          formControlName="marriedStatus"
+        />
       </div>
 
       <button
         type="submit"
-        class="btn btn-primary"
+        class="button btn"
+        (mouseenter)="valid = true"
+        (mouseleave)="valid = false"
+        [ngStyle]="buttonDesign()"
+        [ngClass]="!dataForm.valid ? 'btn-primary' : 'button'"
         [disabled]="!dataForm.valid"
       >
         Submit!
