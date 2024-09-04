@@ -12,7 +12,7 @@ form {
   background-image: linear-gradient(to right, #222, #bbb);
 }
 input.ng-invalid.ng-touched {
-  border: 1.4px solid #0cc5d2;
+  border: 1.4px solid red;
 }
 label {
   font-size: 15px;
@@ -42,4 +42,25 @@ input[type="checkbox"]:hover {
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
+}
+.button {
+  box-shadow: 0 5px 16px 5px rgba(255, 255, 255, 0.2);
+
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #0cc5d2;
+  background-color: #0cc5d2;
+  color: #fff;
+}
+
+.btn {
+  padding: 10px 20px;
+
+  font-size: 15px;
+  border-radius: 12px;
+}
+.btn:hover,
+.button:hover {
+  transform: scale(1.04);
 }
